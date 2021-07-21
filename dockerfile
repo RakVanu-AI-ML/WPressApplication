@@ -2,6 +2,9 @@
 # Build stage
 #
 FROM maven:3.6.0-jdk-11-slim AS build
+COPY src /var/lib/jenkins/workspace/WPPipeline/src
+COPY pom.xml /var/lib/jenkins/workspace/WPPipeline
+RUN mvn -f /var/lib/jenkins/workspace/WPPipeline/pom.xml clean package
 # Package stage
 # 
 FROM openjdk:11-jre-slim
