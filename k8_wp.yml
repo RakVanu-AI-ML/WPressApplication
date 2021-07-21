@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: WordProcessPipieline
+  name: wp_pipeline_1
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: WordProcessPipieline
+      app: wp_pipeline_1
   template:
     metadata:
       labels:
-        app: WordProcessPipieline
+        app: wp_pipeline_1
     spec:
       containers:
         - name: wordpress
@@ -24,11 +24,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: WordProcessPipieline
+  name: wp_pipeline_1
 spec:
   type: NodePort
   ports:
     - port: 80
       targetPort: 8080
   selector:
-    app: WordProcessPipieline
+    app: wp_pipeline_1
