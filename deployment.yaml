@@ -28,7 +28,7 @@ spec:
         app: wp-pipe-line1
     spec:
       containers:
-      - name: wp_pipe_line1
+      - name: wp-pipe-line1
         image: vanudockerhub/wp_pipeline_1
         imagePullPolicy: IfNotPresent
         ports:
